@@ -1,0 +1,23 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Klynn",
+  "colors": {
+    "primary": "#1B4B73"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentación",
+        "groups": [
+          {
+            "group": "Primeros pasos",
+            "pages": [
+              "index"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
