@@ -1,0 +1,35 @@
+---
+title: Usuarios, Colaboradores y Roles
+description: Cómo crear accesos para cajeros, lavadores, planchadores y administradores con permisos protegidos.
+---
+
+# Usuarios, Colaboradores y Roles 👥
+
+Para proteger la información financiera y mantener una auditoría clara de cada operación, **cada empleado debe tener su propio usuario y contraseña**. Nunca compartas la cuenta de administrador general.
+
+---
+
+## 🛡️ Jerarquía de Roles en Klynn
+
+| Rol | Mostrador (POS) | Caja y Cobro | Estantería | Nómina y Finanzas | Configuración |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Administrador** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Supervisor / Gerente** | ✅ | ✅ | ✅ | ⚠️ Solo consulta | ❌ |
+| **Cajero / Recepción** | ✅ | ✅ | ✅ | ❌ | ❌ |
+| **Operador (Lavado/Plancha)**| ❌ | ❌ | ✅ | ❌ | ❌ |
+| **Chofer / Repartidor** | ❌ | ⚠️ Solo cobro delivery | ❌ | ❌ | ❌ |
+
+---
+
+## ➕ Cómo Registrar un Nuevo Empleado
+
+1. Dirígete a **Personal** en el menú lateral.
+2. Haz clic en el botón **"Nuevo Empleado"**.
+3. Completa los datos:
+   * **Nombre y Apellido.**
+   * **Cédula / Documento de Identidad.**
+   * **Teléfono de contacto.**
+   * **Puesto / Rol Asignado:** (Cajero, Planchador, Lavador, etc.).
+   * **Modalidad de Sueldo:** Sueldo fijo mensual/quincenal, o comisiones por destajo (pago por pieza planchada o lavada).
+4. Activa la opción **"Habilitar Acceso al Sistema"** y define su correo y contraseña de inicio de sesión.
+5. Haz clic en **Guardar Colaborador**.

@@ -3,7 +3,9 @@
   "theme": "mint",
   "name": "Klynn",
   "colors": {
-    "primary": "#1B4B73"
+    "primary": "#1B4B73",
+    "light": "#1B4B73",
+    "dark": "#F0B900"
   },
   "navigation": {
     "tabs": [
@@ -11,9 +13,70 @@
         "tab": "Documentación",
         "groups": [
           {
-            "group": "Primeros pasos",
+            "group": "Primeros Pasos",
             "pages": [
-              "index"
+              "index",
+              "primeros-pasos/registro-invitacion",
+              "primeros-pasos/configuracion-inicial",
+              "primeros-pasos/usuarios-y-roles"
+            ]
+          },
+          {
+            "group": "Caja y Turnos",
+            "pages": [
+              "caja-y-turnos/apertura-caja",
+              "caja-y-turnos/movimientos-efectivo",
+              "caja-y-turnos/cierre-y-arqueo"
+            ]
+          },
+          {
+            "group": "Clientes",
+            "pages": [
+              "clientes/crear-cliente",
+              "clientes/editar-y-gestionar"
+            ]
+          },
+          {
+            "group": "Punto de Venta y Órdenes",
+            "pages": [
+              "ordenes-y-pos/crear-orden",
+              "ordenes-y-pos/cobro-y-tickets",
+              "ordenes-y-pos/seguimiento-y-estados"
+            ]
+          },
+          {
+            "group": "Estantería y Entregas",
+            "pages": [
+              "estanteria/organizacion-fisica",
+              "estanteria/ubicacion-y-entrega"
+            ]
+          },
+          {
+            "group": "Crédito y Finanzas",
+            "pages": [
+              "credito-y-finanzas/cxc-cuentas-por-cobrar",
+              "credito-y-finanzas/cxp-cuentas-por-pagar"
+            ]
+          },
+          {
+            "group": "Nómina y Personal",
+            "pages": [
+              "nomina/gestion-periodos",
+              "nomina/calculo-y-destajo",
+              "nomina/pago-y-volantes"
+            ]
+          },
+          {
+            "group": "Facturación Fiscal (DGII)",
+            "pages": [
+              "fiscal-dgii/comprobantes-ncf",
+              "fiscal-dgii/facturacion-electronica-ecf"
+            ]
+          },
+          {
+            "group": "Logística y Delivery",
+            "pages": [
+              "logistica-delivery/rutas-y-entregas"
             ]
           }
         ]

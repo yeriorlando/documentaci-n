@@ -1,0 +1,42 @@
+---
+title: Cierre de Turno y Arqueo Ciego
+description: Proceso de cuadre de caja al finalizar la jornada, conteo de billetes y detección de diferencias.
+---
+
+# Cierre de Turno y Arqueo Ciego 🧾
+
+Al terminar el turno de trabajo o al final del día, el cajero debe realizar el arqueo para contrastar el dinero físico en la gaveta contra lo que registró el sistema.
+
+---
+
+## 🔍 ¿Qué es el Arqueo Ciego de Klynn?
+
+Para evitar manipulaciones, Klynn utiliza un **Arqueo Ciego**:
+* El sistema **no le muestra al cajero cuánto dinero debería haber** antes de que cuente.
+* El cajero debe contar físicamente su dinero, billete por billete, e ingresarlo en la pantalla.
+* Una vez ingresado, el sistema compara y genera el reporte de cuadre exacto.
+
+---
+
+## 📋 Pasos para el Cierre de Caja
+
+1. Dirígete al módulo de **Caja**.
+2. Haz clic en **"Cerrar Turno de Caja"**.
+3. En la calculadora de desglose, introduce la cantidad de billetes y monedas de cada denominación:
+   * Cantidad de billetes de RD$2,000, RD$1,000, RD$500, RD$200, RD$100, RD$50.
+   * Monedas de RD$25, RD$10, RD$5, RD$1.
+4. El sistema calculará el **Total de Efectivo Físico**.
+5. Revisa los cobros recibidos por **Tarjeta** (sumando los vouchers del verifone) y **Transferencias Bancarias**.
+6. Haz clic en **"Finalizar Cierre de Turno"**.
+
+---
+
+## 📊 Resultado del Cuadre: Sobrantes y Faltantes
+
+Al confirmar el cierre, Klynn generará la pantalla de liquidación con tres posibles estados:
+
+* **✅ Caja Cuadrada (Diferencia RD$0.00):** El dinero físico coincide al centavo con las ventas netas del sistema.
+* **⚠️ Faltante de Caja:** Hay menos dinero en gaveta del que se registró en ventas (se muestra en rojo).
+* **ℹ️ Sobrante de Caja:** Hay más dinero del registrado (se muestra en azul).
+
+> 🖨️ **Impresión del Comprobante:** Pulsa en **"Imprimir Resumen de Cierre"** para obtener el ticket térmico de cuadre que firmará el cajero y el supervisor.

@@ -1,0 +1,8 @@
+/* Ajuste de tamaño de logo para Mintlify */
+header a img,
+nav a img,
+#navbar img {
+  height: 34px !important;
+  max-height: 36px !important;
+  width: auto !important;
+}
