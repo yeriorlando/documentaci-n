@@ -2,6 +2,11 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Klynn",
+  "logo": {
+    "light": "/logo.png",
+    "dark": "/logo.png",
+    "href": "https://klynn.com.do"
+  },
   "colors": {
     "primary": "#1B4B73",
     "light": "#2E75B6",

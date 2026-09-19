@@ -1,8 +1,35 @@
-/* Ajuste de tamaño de logo para Mintlify */
+/* =========================================================
+   Ajuste de tamaño para el logotipo de Klynn en Mintlify
+   ========================================================= */
+
+/* Selector universal para el logotipo en la cabecera / barra de navegación */
+header img,
 header a img,
+nav img,
 nav a img,
-#navbar img {
-  height: 34px !important;
-  max-height: 36px !important;
+#navbar img,
+.sidebar img,
+img.logo,
+img[alt*="logo" i],
+img[alt*="klynn" i],
+img[src*="logo" i],
+a[href="/"] img,
+a[href*="docs"] img {
+  height: 52px !important;
+  max-height: 55px !important;
   width: auto !important;
+  max-width: 200px !important;
+  object-fit: contain !important;
+}
+
+/* Permitir que el contenedor del enlace no recorte el logo */
+header a[href="/"],
+nav a[href="/"],
+a:has(img[alt*="logo" i]),
+a:has(img[alt*="klynn" i]),
+.navbar-brand {
+  height: auto !important;
+  max-height: none !important;
+  display: flex !important;
+  align-items: center !important;
 }
