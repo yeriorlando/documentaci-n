@@ -1,0 +1,45 @@
+---
+title: "WhatsApp Business y Centro de Conversaciones"
+description: "Envío automático de tickets digitales, notificaciones de orden lista, recordatorios de retiro y chat omnicanal directo en Klynn."
+icon: "comments"
+---
+
+# WhatsApp Business y Centro de Conversaciones
+
+El módulo de **Conversaciones** (`/conversations`) unifica la comunicación entre tu lavandería y tus clientes a través del canal más utilizado del mundo: **WhatsApp**. Permite automatizar avisos cruciales del servicio y responder consultas desde una misma pantalla compartida para todo tu equipo.
+
+```
+┌────────────────────────────────────────────────────────┐
+│             CENTRO DE COMUNICACIÓN WHATSAPP            │
+├──────────────────────────┬─────────────────────────────┤
+│   NOTIFICACIONES AUTO    │       CHAT OMNICANAL        │
+│  1. Ticket Digital (POS) │  • Respuestas directas      │
+│  2. Orden Lista (Planta) │  • Enlace con ficha cliente │
+│  3. Recordatorio Retiro  │  • Historial de pedidos     │
+│  ↳ Ahorra tiempo y papel │  • Envío de fotos y notas   │
+└──────────────────────────┴─────────────────────────────┘
+```
+
+---
+
+## 1. Notificaciones Transaccionales Automáticas
+
+Klynn se encarga de mantener informado a tu cliente en cada hito del proceso sin que tus cajeros tengan que enviar mensajes manualmente:
+
+1. **Recepción del Pedido y Ticket Digital**:
+   - En cuanto se cobra o guarda una orden en `/nueva-orden`, Klynn envía un mensaje con el desglose de prendas, monto total, saldo pendiente y enlace para ver el ticket digital en PDF.
+2. **Aviso de Ropa Lista**:
+   - Cuando la ropa termina el ciclo de planchado o empaque y se mueve a la columna *Terminado* en `/procesos`, se dispara automáticamente el mensaje: *"¡Hola [Nombre]! Tu ropa de la orden #[ID] está 100% limpia y lista para entrega en nuestra sucursal"*.
+3. **Recordatorio de Prendas en Estantería**:
+   - Para clientes que olvidan retirar su ropa durante más de 7 o 15 días, el sistema puede disparar recordatorios amigables para liberar espacio en tus percheros y recuperar cuentas por cobrar.
+
+---
+
+## 2. Bandeja de Chat Centralizada
+
+En `/conversations`:
+- Tienes la lista de todas las conversaciones activas con los clientes de tu lavandería.
+- Al seleccionar una conversación, en el panel lateral derecho visualizas:
+  - Ficha del cliente (nombre, teléfono, dirección para delivery).
+  - Historial de órdenes previas y si tiene saldos deudores pendientes.
+- Puedes responder dudas, enviar notas de voz, adjuntar fotos de manchas complejas detectadas en prendas o coordinar el horario exacto para el chofer de entrega.

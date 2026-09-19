@@ -1,0 +1,48 @@
+---
+title: "Control y Asignación de Marbetes Físicos"
+description: "Sistema de identificación física de prendas mediante marbetes hidro-resistentes, códigos de color y trazabilidad de lotes en Klynn."
+icon: "tags"
+---
+
+# Control y Asignación de Marbetes Físicos
+
+El módulo de **Control de Marbetes** (`/control-marbetes`) resuelve el problema más temido de toda lavandería: **la pérdida, confusión o extravío de prendas de vestir**. En Klynn, cada prenda o bulto de ropa recibe un marbete físico numerado e hidro-resistente que resiste ciclos intensivos de agua, jabón, calor y solventes de tintorería.
+
+```
+┌────────────────────────────────────────────────────────┐
+│             CÓDIGOS DE COLOR DE MARBETES EN KLYNN      │
+├──────────────┬───────────────┬─────────────────────────┤
+│ Color        │ Prefijo       │ Aplicación Habitual     │
+├──────────────┼───────────────┼─────────────────────────┤
+│ Azul         │ A-###         │ Ropa de diario al peso  │
+│ Verde        │ V-###         │ Blancos, toallas, sában.│
+│ Naranja      │ N-###         │ Servicio Express / Urg. │
+│ Rojo         │ R-###         │ Tintorería / Dry Clean  │
+│ Amarillo     │ AM-###        │ Edredones y colchas     │
+│ Morado       │ M-###         │ Ropa delicada y seda    │
+│ Rosa         │ RS-###        │ Sastrería y composturas │
+└──────────────┴───────────────┴─────────────────────────┘
+```
+
+---
+
+## 1. ¿Cómo Funciona la Identificación Física?
+
+1. Al recibir las prendas en mostrador (`/nueva-orden`), el cajero toma una tira de marbetes del color asignado para ese tipo de servicio o día de la semana.
+2. Cada marbete tiene un prefijo y un número correlativo (ej: `A-101`, `A-102`, `A-103`).
+3. El número de marbete inicial o el rango de marbetes se digita en la orden del cliente.
+4. El marbete físico se grapa o fija en una costura oculta, etiqueta interior o pasacinto de la prenda usando una grapadora de marbetes de lavandería con grapas inoxidables.
+5. El ticket entregado al cliente y el ticket de control interno de planta imprimen exactamente la serie de marbetes asignada.
+
+---
+
+## 2. Búsqueda y Localización Inmediata por Marbete
+
+Si un operario encuentra una prenda suelta en una secadora o mesa de empaque:
+- Entra a `/control-marbetes`.
+- En la barra de búsqueda superior, digita el número que lee en el marbete (ej: `N-45`).
+- El sistema muestra en milisegundos:
+  - Número de orden y nombre del cliente.
+  - Descripción de la prenda y servicio contratado.
+  - Estante o perchero donde debe colocarse una vez terminada.
+- Con esta búsqueda se erradican los reclamos por prendas cambiadas entre clientes.

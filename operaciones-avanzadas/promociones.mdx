@@ -1,0 +1,46 @@
+---
+title: "Promociones, Descuentos y Cupones"
+description: "Cómo crear ofertas por día de la semana, descuentos automáticos por volumen de prendas o libras y cupones promocionales en Klynn."
+icon: "badge-percent"
+---
+
+# Promociones, Descuentos y Cupones
+
+El módulo de **Promociones** (`/promociones`) te permite atraer nuevos clientes y fidelizar a los habituales aumentando el volumen de prendas recibidas durante los días de menor afluencia.
+
+```
+┌────────────────────────────────────────────────────────┐
+│             TIPOS DE PROMOCIONES EN KLYNN              │
+├──────────────────────────┬─────────────────────────────┤
+│   REGLAS POR DÍA SEMANA  │     DESCUENTOS POR VOLUMEN  │
+│  • "Miércoles de Camisas"│  • Más de 20 lbs: -10%      │
+│  • "Viernes de Edredones"│  • Más de 5 Trajes: -15%    │
+│  ↳ Aplica automático     │  ↳ Incentiva pedidos grands │
+├──────────────────────────┴─────────────────────────────┤
+│                  CUPONES PROMOCIONALES                 │
+│  • Código alfanumérico (ej: BIENVENIDO10)              │
+│  • Válido por rango de fechas o un solo uso por clte   │
+└────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 1. Creación de una Promoción
+
+1. Ve a `/promociones` y haz clic en **"+ Nueva Promoción"**.
+2. Completa los datos:
+   - **Título**: Nombre atractivo (ej: *Miércoles de Blancos y Sábanas*, *Descuento Familiar por Volumen*).
+   - **Tipo de Beneficio**:
+     - **Porcentaje de Descuento (%)**: Ej: *15% OFF*.
+     - **Monto Fijo en Dinero (RD$)**: Ej: *RD$ 100 de descuento en el total*.
+   - **Días Aplicables**: Marca las casillas de los días de la semana en que la oferta estará vigente (Lun, Mar, Mié, Jue, Vie, Sáb, Dom).
+   - **Condición de Volumen Mínimo**: Si exige una cantidad mínima de libras o prendas para activarse.
+   - **Código de Cupón (Opcional)**: Si deseas que el cajero deba digitar una palabra clave para aplicarlo en mostrador.
+3. Guarda la promoción con el switch en estado **Activa**.
+
+---
+
+## 2. Aplicación en el Punto de Venta (POS)
+
+- **Promociones Automáticas**: Si un cliente trae ropa un miércoles y coincide con una promoción de día de la semana, el sistema aplica la rebaja de inmediato en el desglose del cobro sin intervención manual.
+- **Cupones Escritos**: El cajero puede escribir el código en la casilla de descuento para verificar su validez y aplicar la bonificación en tiempo real.

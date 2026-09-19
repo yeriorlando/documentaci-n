@@ -1,0 +1,113 @@
+---
+title: "Gestión de Personal, Roles y Permisos"
+description: "Guía paso a paso para crear empleados, asignar roles, configurar la matriz de permisos granulares y gestionar destajos en Klynn."
+icon: "user-gear"
+---
+
+# Gestión de Personal, Roles y Permisos
+
+El módulo de **Personal** (`/personal`) te permite administrar a todo el equipo humano de tu lavandería. En Klynn no solo registras empleados, sino que controlas con precisión quirúrgica qué acciones puede realizar cada colaborador en el sistema para garantizar la seguridad financiera de tu negocio.
+
+```
+┌────────────────────────────────────────────────────────┐
+│             ESTRUCTURA DE SEGURIDAD KLYNN              │
+├──────────────────────────┬─────────────────────────────┤
+│     ROLES PRINCIPALES    │     PERMISOS GRANULARES     │
+│  • ADMIN                 │  • Anular órdenes           │
+│  • SUPERVISOR            │  • Condonar deudas / saldo  │
+│  • VENDEDOR / CAJERO     │  • Emitir Notas de Crédito  │
+│  • RECEPCIONISTA         │  • Ver Reportes y Utilidad  │
+│  • REPARTIDOR            │  • Apertura y Cierre Caja   │
+│  • OPERARIO DE PLANTA    │  • Configuración y Hardware │
+└──────────────────────────┴─────────────────────────────┘
+```
+
+---
+
+## 1. Roles Predefinidos del Sistema
+
+Cada colaborador tiene un rol base asignado que define su función operativa:
+
+| Rol | Distintivo | Perfil Operativo y Alcance Típico |
+| :--- | :--- | :--- |
+| **ADMIN** | Rojo | Dueño o Gerente General. Posee acceso total sin restricciones a todos los módulos, métricas de ganancias y configuraciones. |
+| **SUPERVISOR** | Índigo | Encargado de turno o de planta. Puede autorizar devoluciones, validar descuentos y supervisar el flujo de lavado. |
+| **VENDEDOR / CAJERO** | Esmeralda | Personal de mostrador. Encargado de recibir ropa, pesar bultos, facturar, cobrar y entregar prendas listas. |
+| **RECEPCIONISTA** | Ámbar | Atención al cliente y toma de órdenes. |
+| **REPARTIDOR** | Celeste | Chófer o mensajero. Acceso a la ruta de delivery, mapas y confirmación de entregas a domicilio. |
+| **OPERARIO** | Gris | Personal de planta de lavado, secado y planchado. Acceso al tablero de procesos para marcar avances de lotes. |
+
+---
+
+## 2. Cómo Dar de Alta a un Nuevo Empleado
+
+1. En `/personal`, haz clic en el botón superior **"+ Nuevo Colaborador"**.
+2. En el formulario que se despliega, completa los datos básicos:
+   - **Nombre Completo**: Nombres y apellidos del trabajador.
+   - **Correo Electrónico**: Servirá como nombre de usuario para iniciar sesión.
+   - **Teléfono / WhatsApp**: Para comunicación interna y envío del código OTP de activación.
+   - **Cédula / Documento de Identidad**: Para cumplimiento laboral y volantes de pago.
+   - **Rol Asignado**: Selecciona uno de los roles estándar de la lista.
+3. Define la modalidad de remuneración:
+   - **Salario Fijo**: Monto mensual o quincenal pactado.
+   - **Tarifa de Horas Extras**: Tarifa horaria aplicable fuera de la jornada ordinaria.
+   - **Comisión por Destajo**: Tarifa fija por prenda o libra procesada (útil para planchadores y lavadores a comisión).
+
+---
+
+## 3. Matriz de Permisos Granulares
+
+A diferencia de los sistemas tradicionales donde los permisos son "todo o nada", en Klynn puedes personalizar de manera independiente los accesos de cualquier empleado, sin importar su rol base:
+
+```
+┌────────────────────────────────────────────────────────┐
+│         MATRIZ DE PERMISOS GRANULARES EN KLYNN         │
+├─────────────────────┬──────────────────────────────────┤
+│ Módulo / Acción     │ ¿Qué autoriza este permiso?       │
+├─────────────────────┼──────────────────────────────────┤
+│ conversations       │ Acceso al centro de WhatsApp.    │
+│ dashboard           │ Vista de métricas de la sucursal.│
+│ nueva-orden         │ Crear tickets en el punto venta. │
+│ ordenes             │ Consultar listado de pedidos.    │
+│ procesos            │ Ver y mover tablero de planta.   │
+│ caja                │ Abrir caja, arqueos y retiros.   │
+│ clientes            │ Directorio de clientes y saldos. │
+│ catalogo            │ Modificar prendas y tarifas.     │
+│ personal            │ Crear y editar trabajadores.     │
+│ logistica           │ Asignar chóferes y despachos.    │
+│ gastos              │ Registrar egresos y facturas.    │
+│ reportes            │ Ver balances, utilidad y ventas. │
+│ configuracion       │ Datos fiscales e impresoras.     │
+├─────────────────────┴──────────────────────────────────┤
+│ ACCIONES CRÍTICAS DE SEGURIDAD (Requieren cuidado)     │
+├─────────────────────┬──────────────────────────────────┤
+│ anular-orden        │ Cancelar y anular un ticket.     │
+│ condonar-deuda      │ Perdonar saldo pendiente a un cl.│
+│ nota-credito        │ Emitir NCF B04 de devolución.    │
+│ nota-debito         │ Emitir NCF B03 de ajuste.        │
+│ autorizar-credito   │ Habilitar crédito a un cliente.  │
+└─────────────────────┴──────────────────────────────────┘
+```
+
+> **Buenas Prácticas de Seguridad**: Se recomienda restringir estrictamente los permisos de `anular-orden` y `condonar-deuda` únicamente a los Administradores o Supervisores. De esta forma, si un cajero comete un error en un cobro, deberá solicitar la autorización de un superior para cancelarlo.
+
+---
+
+## 4. Activación de Cuenta y Contraseñas (Flujo OTP)
+
+Para evitar que el administrador tenga que escribir contraseñas inseguras:
+
+1. Al guardar el nuevo colaborador, Klynn genera una **invitación de acceso**.
+2. Puedes elegir entre:
+   - **Enviar invitación por correo electrónico**: El trabajador recibe un enlace directo para establecer su contraseña.
+   - **Envío de código OTP por WhatsApp**: Se envía un código numérico de verificación de 6 dígitos al número del empleado.
+3. El colaborador entra a la pantalla de acceso, digita su código OTP y define su clave secreta personal.
+
+---
+
+## 5. Destajo y Productividad de Planta
+
+Si en tu lavandería se compensa a los colaboradores por volumen producido:
+- En la ficha de cada operario de planta, activa la casilla **Aplica Destajo**.
+- Establece la tarifa por unidad (ej: *RD$ 15 por camisa planchada* o *RD$ 3 por libra lavada*).
+- A medida que el operario toma y finaliza prendas en el tablero de `/procesos`, el sistema acumula automáticamente su saldo producido para liquidarse en el módulo de Nómina (`/nomina`).

@@ -1,0 +1,82 @@
+---
+title: "Analíticas, Reportes Contables e Informes DGII"
+description: "Guía para consultar métricas de rentabilidad neta, ventas por método de pago, historial de arqueos y exportación de formatos 606, 607 y 608 de la DGII en Klynn."
+icon: "chart-mixed"
+---
+
+# Analíticas, Reportes Contables e Informes DGII
+
+El módulo de **Reportes** (`/reportes`) convierte los datos de tu operación diaria en información financiera clara para la toma de decisiones. Desde aquí evalúas el rendimiento comercial de tu lavandería, auditas los arqueos de caja y generas los archivos obligatorios requeridos por tu contador y la Dirección General de Impuestos Internos (DGII).
+
+```
+┌────────────────────────────────────────────────────────┐
+│             CENTRO DE ANALÍTICA Y REPORTES             │
+├──────────────────────────┬─────────────────────────────┤
+│     INDICADORES CLAVE    │       AUDITORÍA FISCAL      │
+│  • Ventas Totales RD$    │  • Formato 607 (Ventas)     │
+│  • ITBIS Facturado RD$   │  • Formato 606 (Gastos)     │
+│  • Gastos Operativos RD$ │  • Formato 608 (Anulaciones)│
+│  • Rentabilidad Neta RD$ │  • Reporte e-CF Enviados    │
+├──────────────────────────┴─────────────────────────────┤
+│                   ANÁLISIS COMERCIAL                   │
+│  • Ventas por Método de Pago (Efectivo, Tarjeta, Trans)│
+│  • Ranking de Prendas más Lavadas                      │
+│  • Ticket Promedio por Cliente                         │
+│  • Historial de Cierres de Caja y Descuadres           │
+└────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 1. Métricas Financieras Principales
+
+Al ingresar a `/reportes`, el sistema calcula automáticamente los números de tu periodo seleccionado:
+
+1. **Ventas Totales Brutas**: Suma de todos los tickets generados y cobrados (excluyendo órdenes anuladas).
+2. **ITBIS Total**: Impuesto sobre transferencias de bienes industrializados y servicios recaudado para declaración fiscal.
+3. **Total de Gastos**: Egresos registrados en el módulo de `/gastos` para el mismo periodo.
+4. **Rentabilidad Neta en Tiempo Real**: Calculada como `Ventas Totales - Total de Gastos`. Te muestra la ganancia líquida antes de impuestos corporativos.
+5. **Ticket Promedio**: Monto promedio que gasta un cliente en cada visita a tu lavandería (`Ventas / Cantidad de Órdenes`).
+
+---
+
+## 2. Desglose de Ventas por Método de Pago
+
+Una gráfica y tabla resumen te muestran cómo pagaron tus clientes:
+- **Efectivo**: Total recaudado en mostrador que debió ingresar físicamente a la gaveta de dinero.
+- **Tarjeta de Crédito / Débito**: Total transaccionado a través de los terminales de punto de venta (verifones/POS bancarios). Útil para cuadrar con el estado de cuenta del banco adquirente.
+- **Transferencia Bancaria**: Pagos directos recibidos vía banca electrónica.
+
+---
+
+## 3. Prendas y Servicios Más Demandados
+
+Klynn consolida qué artículos generan la mayor parte de tu facturación:
+- Ranking de prendas más lavadas (ej: Camisas de vestir, Edredones, Pantalones jeans).
+- Volumen de ropa facturada por libra vs piezas individuales de tintorería.
+- Distribución de servicios: porcentaje correspondiente a Lavado y Secado, Planchado a Vapor y Lavado en Seco (Dry Clean).
+
+---
+
+## 4. Auditoría de Cierres de Caja
+
+Para evitar pérdidas o fugas de efectivo:
+- La sección de **Auditoría de Cajas** lista los últimos turnos finalizados por tus cajeros.
+- Muestra el cajero responsable, hora de apertura, hora de cierre, monto inicial, efectivo esperado por el sistema y efectivo real contado.
+- Si existe una diferencia (faltante o sobrante), se resalta visualmente en color ámbar o rojo junto con la justificación ingresada por el cajero.
+
+---
+
+## 5. Exportación de Formatos Oficiales DGII (606, 607, 608)
+
+Klynn elimina el dolor de cabeza de armar reportes tributarios a mano:
+
+1. Haz clic en el botón superior **"Exportar DGII"**.
+2. En el modal emergente, selecciona:
+   - **Tipo de Reporte**:
+     - `Formato 607 (Ventas y Operaciones)`: Exporta todas las facturas con NCF emitidas a clientes (B01, B02, etc.), desglosando RNC, ITBIS facturado y fecha de retención.
+     - `Formato 606 (Compras y Gastos)`: Exporta todos los egresos con NCF de proveedores (B01 y B11) con sus retenciones de ITBIS o ISR aplicables.
+     - `Formato 608 (Comprobantes Anulados)`: Lista todos los números de comprobantes fiscales cancelados durante el periodo y su motivo de anulación.
+     - `Historial e-CF Enviados`: Para lavanderías con Facturación Electrónica, descarga el estado de recepción y validación de los comprobantes electrónicos ante la DGII.
+   - **Año y Mes**: Selecciona el mes fiscal a declarar.
+3. Haz clic en **"Descargar Archivo"**. Obtendrás una hoja estructurada lista para cargar a la herramienta de pre-validación de la DGII.

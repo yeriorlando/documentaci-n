@@ -1,0 +1,80 @@
+---
+title: "Panel de Propietarios y Gestión Multisede"
+description: "Vista ejecutiva para dueños de lavanderías con múltiples sucursales, conmutador de sedes, apertura de nuevas sucursales y suscripciones en Klynn."
+icon: "chart-network"
+---
+
+# Panel de Propietarios y Gestión Multisede
+
+Si eres dueño de una cadena de lavanderías o gestionas dos o más puntos de atención, el **Dashboard Admin** (`/dashboard-admin`), también conocido como **"Mis Lavanderías"**, es tu centro de comando estratégico. Te brinda una perspectiva ejecutiva consolidada de todo tu negocio sin obligarte a iniciar sesión individualmente en cada sucursal.
+
+```
+┌────────────────────────────────────────────────────────┐
+│            PANEL DE PROPIETARIOS KLYNN                 │
+├──────────────────────────┬─────────────────────────────┤
+│   MÉTRICAS GLOBALES      │     CONMUTADOR MULTISEDE    │
+│  • Facturación Consolid. │  • Sucursal Centro          │
+│  • Órdenes Totales       │  • Sucursal Bella Vista     │
+│  • Balances de Caja      │  • Sucursal Piantini        │
+│  • Sucursales Activas    │  ↳ Cambio en 1 clic         │
+├──────────────────────────┴─────────────────────────────┤
+│                  GESTIÓN EMPRESARIAL                   │
+│  • Botón "+ Nueva Sucursal" (/nueva-sucursal)          │
+│  • Estado del Plan (Básico / Pro / Enterprise)         │
+│  • Soporte Prioritario VIP vía WhatsApp                │
+└────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 1. Métricas Globales Consolidadas
+
+En la cabecera del panel dispones de tarjetas analíticas en tiempo real:
+
+1. **Facturación Total Acumulada**: Sumatoria de todos los ingresos generados por todas tus sucursales activas en el periodo.
+2. **Total de Órdenes Procesadas**: Conteo global de tickets emitidos a nivel de toda la cadena.
+3. **Sucursales en Operación**: Estado de tus sedes (Activas, En Periodo de Prueba o En Mantenimiento).
+4. **Resumen de Cajas**: Información del efectivo vivo disponible en los turnos de caja abiertos en cada una de tus tiendas.
+
+---
+
+## 2. Conmutador Rápido de Sucursales (Branch Switcher)
+
+Para trabajar en una sucursal específica sin cerrar sesión:
+
+1. En el listado de **"Mis Lavanderías"**, ubica la tarjeta de la sede que deseas administrar.
+2. Cada tarjeta muestra:
+   - Nombre comercial y nombre de la sucursal (ej: *Lavandería Klynn — Sede Bella Vista*).
+   - RNC registrado y teléfono de la tienda.
+   - Plan activo de la sede (Básico, Pro o Enterprise).
+   - Cantidad de órdenes emitidas y volumen facturado de esa sede en particular.
+3. Haz clic en el botón **"Entrar a esta sucursal"** (o en la flecha de acceso).
+4. Klynn conmuta inmediatamente el contexto de tu sesión (`setActiveTenant`) y te traslada al punto de venta y operaciones de dicha sede. Para regresar al panel de dueño, simplemente haz clic en el logo de Klynn o en el menú de usuario selecciona **"Mis Lavanderías"**.
+
+---
+
+## 3. Apertura de una Nueva Sucursal (`/nueva-sucursal`)
+
+Cuando tu negocio se expande y abres un nuevo local:
+
+1. Haz clic en el botón superior **"+ Nueva Sucursal"**.
+2. Completa los datos de la nueva sede:
+   - **Nombre de la Sucursal**: Ej: *Sucursal Naco*, *Sucursal Santiago Centro*.
+   - **Dirección Física y Provincia**: Ubicación del nuevo establecimiento.
+   - **Teléfono y Correo**: Datos de contacto exclusivos del punto de venta.
+   - **RNC / Identificación Fiscal**: Si opera con el mismo RNC corporativo o uno independiente.
+3. El asistente creará automáticamente el espacio de trabajo con su propio inventario de catálogo, clientes, turnos de caja e impresoras térmicas, manteniéndolo vinculado a tu cuenta maestra de propietario.
+
+---
+
+## 4. Planes de Suscripción y Soporte Prioritario
+
+En la sección inferior del panel de control puedes verificar el estado de tus membresías de Klynn:
+
+| Nivel de Plan | Capacidad y Enfoque |
+| :--- | :--- |
+| **Básico** | Ideal para lavanderías individuales o puntos de recepción con 1 caja y volumen estándar. |
+| **Pro** | Para negocios consolidados que requieren módulo de nómina, control de destajo, logística de repartidores y WhatsApp Connect. |
+| **Enterprise** | Para cadenas multisede, con facturación electrónica e-CF ilimitada, homologación DGII completa y soporte telefónico prioritario. |
+
+> **Soporte VIP para Propietarios**: Desde este panel tienes acceso directo al botón flotante de WhatsApp de Soporte VIP de Klynn, donde un ingeniero del equipo te asistirá ante cualquier duda técnica, configuración de impresoras o temas fiscales.

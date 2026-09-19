@@ -22,6 +22,18 @@
             ]
           },
           {
+            "group": "Panel de Propietarios",
+            "pages": [
+              "dashboard-admin/panel-propietario"
+            ]
+          },
+          {
+            "group": "Catálogo y Servicios",
+            "pages": [
+              "catalogo/servicios-y-precios"
+            ]
+          },
+          {
             "group": "Caja y Turnos",
             "pages": [
               "caja-y-turnos/apertura-caja",
@@ -45,10 +57,37 @@
             ]
           },
           {
+            "group": "Operaciones y Planta",
+            "pages": [
+              "operaciones-avanzadas/procesos-y-planta",
+              "operaciones-avanzadas/control-marbetes",
+              "operaciones-avanzadas/promociones",
+              "operaciones-avanzadas/conversaciones"
+            ]
+          },
+          {
             "group": "Estantería y Entregas",
             "pages": [
               "estanteria/organizacion-fisica",
               "estanteria/ubicacion-y-entrega"
+            ]
+          },
+          {
+            "group": "Logística y Delivery",
+            "pages": [
+              "logistica-delivery/rutas-y-entregas"
+            ]
+          },
+          {
+            "group": "Personal y Permisos",
+            "pages": [
+              "personal/gestion-colaboradores"
+            ]
+          },
+          {
+            "group": "Gastos y Egresos",
+            "pages": [
+              "gastos/registro-gastos"
             ]
           },
           {
@@ -59,11 +98,17 @@
             ]
           },
           {
-            "group": "Nómina y Personal",
+            "group": "Nómina y Destajo",
             "pages": [
               "nomina/gestion-periodos",
               "nomina/calculo-y-destajo",
               "nomina/pago-y-volantes"
+            ]
+          },
+          {
+            "group": "Reportes y Analíticas",
+            "pages": [
+              "reportes/analiticas-y-reportes"
             ]
           },
           {
@@ -74,9 +119,9 @@
             ]
           },
           {
-            "group": "Logística y Delivery",
+            "group": "Configuración y Hardware",
             "pages": [
-              "logistica-delivery/rutas-y-entregas"
+              "configuracion/ajustes-del-sistema"
             ]
           }
         ]

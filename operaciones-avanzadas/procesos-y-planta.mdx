@@ -1,0 +1,54 @@
+---
+title: "Procesos y Control de Planta (Kanban de Lavandería)"
+description: "Guía de operación para el tablero Kanban de planta, estaciones de trabajo, lotes de producción y asignación de operarios en Klynn."
+icon: "conveyor-belt-arm"
+---
+
+# Procesos y Control de Planta (Kanban de Lavandería)
+
+El módulo de **Procesos** (`/procesos`) es la herramienta visual diseñada para el equipo de producción y los operarios de planta. Organiza las órdenes en un tablero dinámico de tres columnas operativas para eliminar la confusión, evitar prendas retrasadas y optimizar el uso de lavadoras, secadoras y mesas de planchado.
+
+```
+┌────────────────────────────────────────────────────────┐
+│             TABLERO KANBAN DE PLANTA KLYNN             │
+├─────────────────────┬──────────────────┬───────────────┤
+│     RECIBIDAS       │    EN PROCESO    │   TERMINADO   │
+│  • Llegan de POS    │  • Lavado        │  • Listas p/  │
+│  • Clasificación    │  • Secado        │    entrega    │
+│  • Marbetes puestos │  • Planchado     │  • Notif. WA  │
+│  • Lotes por tipo   │  • Control calid.│    disparada  │
+└─────────────────────┴──────────────────┴───────────────┘
+```
+
+---
+
+## 1. Columnas y Estados del Flujo Operativo
+
+El tablero Kanban se divide en tres fases claras:
+
+1. **RECIBIDAS**:
+   - Órdenes recién ingresadas en el punto de venta por el cajero o recepcionista.
+   - En esta fase la ropa se pesa, se revisan manchas o daños previos y se grapan los marbetes de identificación física.
+2. **EN PROCESO**:
+   - La ropa ha ingresado a la maquinaria de lavado, secado o mesas de planchado.
+   - Se agrupan prendas compatibles para optimizar la carga de las lavadoras industriales.
+3. **TERMINADO**:
+   - Las prendas han superado el control de calidad, han sido dobladas o colocadas en ganchos con su funda protectora plástica.
+   - Al mover una tarjeta a esta columna, **Klynn dispara automáticamente un mensaje de WhatsApp al cliente** avisándole que su ropa está lista para ser retirada o enviada a domicilio.
+
+---
+
+## 2. Movimiento de Órdenes y Asignación de Operarios
+
+- **Avance Rápido**: Cada tarjeta de orden cuenta con un botón de acción rápida (flecha derecha) para avanzar la orden a la siguiente etapa en un clic.
+- **Asignación de Operario**: Puedes seleccionar qué trabajador de planta se está haciendo cargo del lavado o planchado de esa orden. Esto alimenta automáticamente el cálculo de comisiones por destajo en la nómina.
+- **Indicador de Urgencia (Express)**: Las órdenes marcadas como servicio exprés se destacan con una llama de fuego (`🔥 Urgente`) y borde de color llamativo para priorizarlas en el orden de lavado.
+
+---
+
+## 3. Lotes de Servicio y Agrupación de Maquinaria
+
+Para no encender una lavadora industrial de 40 libras por una sola prenda, el modal de **Lotes de Servicio** permite:
+- Filtrar todas las órdenes que requieren un servicio idéntico (ej: *Lavado de Ropa Blanca* o *Lavado en Seco*).
+- Agruparlas en un solo "Lote de Producción" asignado a una máquina específica.
+- Al terminar el ciclo de lavado, marcar el lote como finalizado avanza simultáneamente todas las prendas que lo componían.

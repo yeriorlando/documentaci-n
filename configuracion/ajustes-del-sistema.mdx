@@ -1,0 +1,220 @@
+---
+title: "Configuración General del Sistema y Hardware"
+description: "Manual exhaustivo de todas las pestañas, parámetros, opciones de hardware, impresoras térmicas, flujo de caja y facturación en Klynn."
+icon: "gear"
+---
+
+# Configuración General del Sistema y Hardware
+
+El módulo de **Configuración** (`/configuracion`) es el panel de control maestro donde se personaliza la identidad comercial, la seguridad en mostrador, el comportamiento del punto de venta (POS), el hardware de impresión térmica y las obligaciones fiscales ante la DGII.
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   PESTAÑAS DE CONFIGURACIÓN EN KLYNN                   │
+├───────────────┬──────────────────────┬─────────────────────────────────┤
+│ Pestaña       │ Alcance Principal    │ Opciones Clave                  │
+├───────────────┼──────────────────────┼─────────────────────────────────┤
+│ 1. Perfil     │ Datos del negocio    │ Nombre, RNC, Provincia, PIN     │
+│ 2. Apariencia │ Identidad visual     │ Logo PNG/JPG, Color primario    │
+│ 3. Ticket     │ Formato de recibos   │ 80mm vs 57mm, Textos y Notas    │
+│ 4. Impresora  │ Hardware físico      │ Windows Driver, Modo Kiosko     │
+│ 5. Caja & POS │ Flujo de mostrador   │ Modalidad POS, Copias, Marbetes │
+│ 6. Fiscal     │ Normativa DGII       │ Tradicional vs e-CF, Secuencias │
+│ 7. WhatsApp   │ Mensajería cliente   │ QR Connect, 5 Plantillas Auto   │
+│ 8. Notificac. │ Resumen ejecutivo    │ Informe semanal a propietarios  │
+│ 9. Plan       │ Membresía Klynn      │ Límites, Facturación y Pagos    │
+└───────────────┴──────────────────────┴─────────────────────────────────┘
+```
+
+---
+
+## 1. Pestaña "Perfil" (Datos del Negocio y Seguridad de Terminal)
+
+En esta pestaña se configuran los datos de cabecera que identifican a la lavandería ante los clientes y las entidades regulatorias:
+
+### A. Información Comercial
+- **Nombre comercial de la empresa**: Nombre de la marca que se mostrará en los recibos y en la pantalla principal (ej: *Lavandería & Tintorería Klynn*).
+- **Nombre de la sucursal**: Identificador del punto de venta específico (ej: *Sucursal Principal*, *Sede Bella Vista*, *Plaza Central*).
+- **Teléfono de contacto**: Número oficial de atención al cliente. El sistema aplica formato telefónico dominicano `809-XXX-XXXX` de forma automática.
+- **Correo electrónico**: Correo administrativo donde se recibirán notificaciones de soporte y confirmaciones de pago de la plataforma.
+- **Provincia**: Selector desplegable con las 32 provincias de la República Dominicana (Distrito Nacional, Santo Domingo, Santiago, La Altagracia, etc.).
+- **Dirección física**: Ubicación detallada del local (calle, número, sector, edificio).
+
+### B. Parámetros de Almacenamiento y Seguridad
+- **Alerta de prendas sin retirar**: Define cuántos días debe permanecer una orden en estado `LISTA` antes de ser marcada como rezagada en estantería.
+  - Opciones rápidas de 1 toque: `3d`, `5d`, `7d`, `14d`.
+  - Casilla numérica manual: Permite establecer cualquier valor entre 1 y 90 días.
+- **Bloqueo por inactividad de terminal (PIN de Seguridad POS)**:
+  - Suspende automáticamente la sesión de la terminal si el cajero se aleja del mostrador.
+  - Para reanudar el trabajo, el sistema exige ingresar el **PIN de 4 dígitos** del empleado.
+  - Tiempos de suspensión seleccionables: `Desactivado`, `1 min`, `2 min`, `3 min`, `5 min`, `10 min` o personalizado hasta `120 min`.
+
+---
+
+## 2. Pestaña "Apariencia" (Logotipo y Color de Identidad)
+
+Personaliza la experiencia visual para que el sistema coincida con la marca de tu lavandería:
+
+- **Logotipo del Negocio**:
+  - Se utiliza en los encabezados de los tickets térmicos de mostrador, en el recibo digital de WhatsApp y en los correos electrónicos.
+  - Sube imágenes en formato **PNG** o **JPG** (con fondo blanco o transparente).
+  - Klynn cuenta con **compresión automática en el navegador** (512×512 px) para garantizar una carga ultrarrápida sin consumir espacio excesivo.
+  - Botón de papelera para eliminar el logo y volver al diseño básico.
+- **Color de Identidad Corporativa**:
+  - Selector de color con paleta de tonos recomendados para lavandería (Azul marino `#1B4B73`, Esmeralda, Púrpura, Ámbar).
+  - Permite ingresar cualquier código hexadecimal personalizado (`HEX`).
+  - Cambia dinámicamente el color de botones principales, pestañas activas, encabezados de columnas y tarjetas del punto de venta.
+
+---
+
+## 3. Pestaña "Ticket" (Formato, Tiempos y Textos de Recibos)
+
+Controla los datos y leyendas que se imprimen en los comprobantes entregados a los clientes:
+
+### A. Tiempos de Promesa de Entrega
+- **Formato de papel**: Selector entre `80mm` (estándar de mostrador) y `57mm` (formato estrecho para impresoras móviles).
+- **Tiempo de entrega estándar**: Define la promesa de entrega predeterminada: `24 horas (1 día)`, `48 horas (2 días)`, `72 horas (3 días)` o `96 horas (4 días)`.
+- **Tiempo de entrega URGENTE (Express)**: Promesa para pedidos prioritarios: `3 horas`, `6 horas` o `12 horas`.
+
+### B. Textos Personalizables
+- **Pie de página del ticket**: Mensaje de agradecimiento que aparece al final de la tirilla (ej: *¡Gracias por su preferencia! Calidad y frescura en cada prenda.*).
+- **Nota legal o condiciones del servicio**: Cláusulas contractuales de la lavandería (ej: *Prendas no retiradas después de 30 días pasarán a cubrir costos de almacenaje. No respondemos por adornos o botones no aptos para lavado.*).
+
+### C. Casillas de Verificación Visual (Switches)
+- **Mostrar RNC**: Imprime el RNC de la empresa en el encabezado del ticket.
+- **Mostrar empleado**: Imprime el nombre del cajero que cobró o registró la orden.
+- **Ubicación Conveyor / Estantería**: Imprime el casillero o número de percha física donde se guardará la ropa.
+- **Notas en ticket**: Imprime las instrucciones especiales del cliente (ej: *"Pantalón con mancha de café en el bolsillo derecho"*).
+- **Marquillas de ropa automáticas**: Activa el corte de tirillas individuales por cada prenda para fijar con grapa o pasador.
+
+---
+
+## 4. Configuración de Impresora Física y Hardware Térmico
+
+Klynn ofrece dos modalidades para imprimir tickets sin fricción:
+
+```
+┌────────────────────────────────────────────────────────┐
+│          MODALIDADES DE IMPRESIÓN EN KLYNN             │
+├──────────────────────────┬─────────────────────────────┤
+│  MODO CONTROLADOR WINDOWS│      MODO KIOSKO DIRECTO    │
+│  • Usa el driver nativo  │  • Sin ventana emergente    │
+│  • Compatible con POS80, │  • Impresión instantánea    │
+│    Xprinter, Epson, etc. │  • Requiere asistente .exe  │
+│  • 80mm y 57mm           │  • Ideal para alto tráfico  │
+└──────────────────────────┴─────────────────────────────┘
+```
+
+1. **Controlador de Impresora de Windows**:
+   - Funciona de inmediato con cualquier impresora USB instalada en Windows (POS-80, Xprinter, Epson TM-T20, Bixolon, Star Micronics).
+   - Botón **"Probar Diálogo de Impresión (80mm)"**: Realiza una prueba para verificar que el papel y los márgenes salgan alineados.
+2. **Modo Kiosko (Impresión Silenciosa 100% Automática)**:
+   - Elimina la ventana de confirmación del navegador para que la impresora emita el ticket en medio segundo al hacer clic en "Cobrar".
+   - Enlace para **"Descargar Asistente de Impresión (`Klynn-Kiosco-Setup.exe`)"**.
+   - Asistente guiado con instrucciones paso a paso para configurar Google Chrome o Microsoft Edge en modo kiosko.
+3. **Perfiles de Formato Térmico**:
+   - **Básica**: Texto plano optimizado para máxima compatibilidad con cualquier marca genérica.
+   - **Estándar**: Títulos en negrita, líneas divisorias y totales destacados.
+   - **Completa**: Formato prémium con logotipo gráfico y código QR de validación fiscal e-CF.
+
+---
+
+## 5. Pestaña "Caja" (Flujo de Mostrador y Modalidades del POS)
+
+Esta pestaña determina cómo opera el cajero en el punto de venta:
+
+### A. Parámetros Financieros
+- **Recargo de urgencia (%)**: Porcentaje adicional que se sumará al total cuando se seleccione la opción "Entrega Urgente" (ej: *25%* o *50%*).
+- **Umbral de diferencia de caja (RD$)**: Monto de descuadre tolerado en el arqueo de cierre antes de exigir una justificación obligatoria al cajero (ej: *RD$ 50.00*).
+- **Monto máximo de caja chica (RD$)**: Límite de efectivo permitido en gaveta antes de sugerir un retiro preventivo a bóveda o banco.
+
+### B. Modalidades Operativas del Catálogo en Mostrador
+Permite elegir cómo interactúa el cajero con la pantalla de `/nueva-orden`:
+
+1. **Solo Prendas (Precio Directo)**:
+   - Cada prenda tiene una tarifa fija única.
+   - Con 1 solo toque en la pantalla táctil se agrega al ticket. Ideal para lavanderías rápidas.
+2. **Prendas con Tratamiento**:
+   - Cada prenda permite seleccionar un tratamiento específico (Lavado al agua, Planchado individual, Dry Clean, Almidonado).
+   - La tarifa se adapta según el tratamiento elegido.
+3. **Servicios Primero**:
+   - El cajero selecciona primero el proceso global (ej: *Lavado por Libra* o *Planchado por Docena*) y luego añade las piezas.
+4. **Híbrido / Flexible (Recomendado)**:
+   - Muestra pestañas combinadas para alternar libremente entre cobro por libra y cobro por prenda individual.
+
+### C. Opciones Operativas Adicionales (Switches)
+- **Descuento por Cliente**: Si un cliente tiene pactado un 10% de descuento en su ficha, se aplica automáticamente al seleccionarlo.
+- **Interfaz de venta POS (Modo Táctil)**: Muestra botones grandes tipo cuadrícula optimizados para pantallas táctiles de mostrador.
+- **Ventana modal para desglose**: Abre una ventana emergente detallada al hacer clic en añadir prenda.
+- **Imprimir automáticamente**: Envía el ticket a la impresora sin esperar confirmación al guardar la orden.
+- **Requerir nota al cobrar**: Si la orden no tiene observaciones, solicita una confirmación rápida antes de cerrar el cobro.
+- **Duplicado de factura (Copia de Caja)**: Emite un segundo ticket con los precios detallados para el archivo contable de la administración.
+- **Imprimir copia de taller / producción**: Emite una tirilla de planta con las prendas y los marbetes sin mostrar los precios monetarios.
+- **Solo imprimir taller si tiene ubicación**: Restringe la copia de taller únicamente cuando la orden tiene asignado casillero o percha.
+- **Control de Marbetes (Tiras Hidrofix)**: Activa la captura de color y numeración de marbetes físicos en cada recepción.
+
+---
+
+## 6. Pestaña "Fiscal" (Facturación NCF y Facturación Electrónica e-CF)
+
+Configura la emisión de comprobantes autorizados por la Dirección General de Impuestos Internos:
+
+### A. Modalidad de Facturación
+- **Facturación Tradicional**: Utiliza secuencias físicas de 11 caracteres (B01, B02, B04, B11, etc.).
+- **Facturación Electrónica (e-CF)**: Emite comprobantes electrónicos con firma digital XML y código QR (E31, E32, E34, E43, etc.) sincronizados con EF2 y validados ante los servidores de la DGII.
+
+### B. Gestión de Secuencias y Alertas
+- **Teléfono de alertas NCF por WhatsApp**: Número donde Klynn enviará un aviso cuando una secuencia esté por agotarse.
+- **Tabla de Secuencias Activas**: Muestra tipo de NCF, rango autorizado (desde / hasta), número actual utilizado y fecha de caducidad.
+- **Configuración de Alerta por Secuencia**: Permite fijar el umbral de advertencia (ej: *Avisar cuando queden 20, 50 o 100 comprobantes disponibles*).
+- **Anulación de Secuencias**: Permite dar de baja un rango de comprobantes no utilizados con el motivo formal requerido para el reporte DGII 608.
+
+---
+
+## 7. Pestaña "WhatsApp" (Vinculación QR y Plantillas Automáticas)
+
+Conecta el sistema al canal de WhatsApp Business de tu lavandería:
+
+1. **Vinculación por Código QR**:
+   - En Klynn Connect, haz clic en **"Vincular WhatsApp"**.
+   - Escanea el código QR que aparece en pantalla con la función "Dispositivos Vinculados" de WhatsApp en tu teléfono.
+   - El indicador cambiará a **"En Línea / Conectado"** mostrando la foto de perfil y número vinculado.
+2. **Las 5 Plantillas de Notificación Automática**:
+   - `plantilla_creada`: Se envía al registrar la orden con el número de ticket, fecha de entrega y enlace web al ticket digital.
+   - `plantilla_lista`: Se dispara automáticamente cuando la orden pasa a la columna *Terminado* en el tablero de procesos.
+   - `plantilla_entregada`: Mensaje de agradecimiento post-entrega con invitación a calificar el servicio del 1 al 5.
+   - `plantilla_sin_retirar`: Recordatorio amistoso cuando la ropa supera los días configurados en estantería sin ser retirada.
+   - `plantilla_en_camino`: Mensaje del chofer de reparto para coordinar la entrega a domicilio.
+3. **Variables Disponibles**: En cualquier plantilla puedes insertar `{{cliente}}`, `{{orden_id}}`, `{{total}}`, `{{saldo}}`, `{{prendas}}`, `{{sucursal}}`.
+4. **Envío de Mensaje de Prueba**: Casilla para ingresar un teléfono y verificar la redacción antes de activar los envíos a clientes.
+
+---
+
+## 8. Pestaña "Notificaciones" (Resumen Ejecutivo Semanal)
+
+Diseñado especialmente para los dueños que no están físicamente en la lavandería todos los días:
+
+- **Switch de Resumen Ejecutivo**: Activa o desactiva el reporte consolidado periódico.
+- **Frecuencia**: Elige entre resumen **Semanal** (se envía los domingos en la noche) o **Mensual**.
+- **Canal de Entrega**: Recibe el informe por **WhatsApp**, por **Correo Electrónico** o por **Ambos canales simultáneamente**.
+- **Teléfono y Correo del Destinatario**: Números de los propietarios que recibirán las cifras.
+- **Contenido del Resumen**:
+  - Facturación total del periodo.
+  - Cantidad de órdenes procesadas y entregadas.
+  - Total de egresos registrados en `/gastos`.
+  - Rentabilidad neta líquida del negocio.
+  - Cantidad de clientes nuevos captados.
+- **Botón "Enviar resumen de prueba ahora"**: Genera y envía el reporte de inmediato a tu teléfono para corroborar el formato.
+
+---
+
+## 9. Pestaña "Plan" (Suscripción Klynn y Facturación)
+
+- **Planes Disponibles**: Básico, Pro y Enterprise.
+- **Límites de tu Membresía**:
+  - Cantidad de sucursales habilitadas.
+  - Límite de colaboradores con acceso simultáneo.
+  - Acceso a módulos avanzados (Facturación Electrónica e-CF, Logística de Delivery, Nómina y Destajo).
+- **Fecha de Renovación**: Muestra el próximo corte de pago de tu servicio SaaS.
+- **Botón "Historial de Pagos"**: Abre un modal con todas las facturas emitidas por Klynn, permitiendo descargar los comprobantes fiscales correspondientes.
+- **Atención y Soporte**: Enlace directo a WhatsApp con el equipo comercial de Klynn para ampliación de plan o dudas técnicas.

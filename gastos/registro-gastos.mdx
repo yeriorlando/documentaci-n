@@ -1,0 +1,85 @@
+---
+title: "Registro y Control de Gastos Operativos"
+description: "Control detallado de egresos, deducción automática de caja chica, categorización, comprobantes de compras B01 y B11 y exportación a Excel en Klynn."
+icon: "receipt"
+---
+
+# Registro y Control de Gastos Operativos
+
+El módulo de **Gastos** (`/gastos`) centraliza todas las salidas de dinero de tu lavandería. Su correcta utilización te permite conocer con exactitud la rentabilidad neta real de tu negocio (Ventas menos Gastos), mantener el control estricto de la caja chica y contar con los respaldos fiscales exigidos por la DGII.
+
+```
+┌────────────────────────────────────────────────────────┐
+│             FLUJO DE CONTROL DE EGRESOS EN KLYNN       │
+├──────────────────────────┬─────────────────────────────┤
+│   CATEGORÍAS DE GASTO    │      MÉTODOS DE PAGO        │
+│  • Químicos y Detergentes│  • Efectivo (Caja Chica)    │
+│  • Empaque y Ganchos     │    ↳ Deduce del arqueo      │
+│  • Mantenimiento Maquin. │  • Transferencia Bancaria   │
+│  • Servicios y Alquiler  │  • Tarjeta Corporativa      │
+├──────────────────────────┴─────────────────────────────┤
+│                 COMPROBANTES DGII                      │
+│  • B01: Facturas con Crédito Fiscal (RNC Suplidor)     │
+│  • B11: Compras a Proveedores Informales (Gastos Men.) │
+│  • Exportación lista para formato 606                  │
+└────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 1. Cómo Registrar un Nuevo Gasto
+
+Para asentar una salida de dinero:
+
+1. Ve a `/gastos` y haz clic en **"+ Registrar Gasto"**.
+2. Completa los campos del formulario:
+   - **Descripción o Concepto**: Detalle claro del egreso (ej: *Compra de 5 galones de detergente líquido y suavizante*, *Pago de energía eléctrica sucursal Bella Vista*, *Reparación de banda secadora #2*).
+   - **Monto (RD$)**: Importe total pagado.
+   - **Categoría**: Selecciona la clasificación correspondiente (o crea una nueva categoría personalizada con color distintivo).
+   - **Fecha del Gasto**: Por defecto la fecha actual, o selecciona una fecha pasada en el calendario.
+   - **Método de Pago**:
+     - **Efectivo**: Si marcas este método, Klynn activará la opción **"Deducir de la Caja Chica Actual"**. Al mantenerlo activado, el sistema registrará automáticamente una salida de efectivo en el turno de caja abierto, asegurando que el arqueo de cierre cuadre al centavo con el dinero físico restante.
+     - **Transferencia**: Si el pago se realizó desde una cuenta bancaria de la empresa.
+     - **Tarjeta**: Si se pagó con tarjeta de débito o crédito empresarial.
+3. Si el proveedor emitió comprobante fiscal:
+   - **Tipo de Comprobante**:
+     - `B01`: Factura con valor de Crédito Fiscal. Requiere indicar el RNC del proveedor y el ITBIS desglosado para deducir impuestos.
+     - `B11`: Comprobante de Compras a Proveedores Informales / Registro de Gastos Menores (por ejemplo, compra de frutas para café, ferretería de barrio o servicios de plomería sin factura comercial).
+     - `Ninguno`: Para recibos simples o salidas no fiscales.
+   - **Número de Comprobante (NCF / e-CF)**: Digita los 11 caracteres del comprobante.
+   - **RNC o Cédula del Proveedor**: Consulta automática con la base tributaria para autocompletar la razón social.
+4. Haz clic en **"Guardar Gasto"**.
+
+---
+
+## 2. Categorías de Gastos Recomendadas
+
+Klynn permite categorizar tus egresos para generar gráficos analíticos de hacia dónde se va el capital:
+
+| Categoría | Color | Ejemplos de Egresos Habituales |
+| :--- | :--- | :--- |
+| **Insumos Químicos** | Azul | Detergente industrial, suavizantes, cloro clorado/oxigenado, quitamanchas, desengrasantes. |
+| **Materiales de Empaque** | Esmeralda | Fundas plásticas transparentes de rollo, ganchos metálicos/plásticos, marbetes hidro-resistentes, cinta adhesiva. |
+| **Mantenimiento y Equipos** | Ámbar | Filtros de secadoras, bandas, mantenimiento de calderas, técnicos de lavadoras industriales, repuestos. |
+| **Servicios Públicos** | Púrpura | Electricidad comercial, agua potable/camiones cisterna, gas licuado de petróleo (GLP), internet y telefonía. |
+| **Local y Arrendamiento** | Índigo | Alquiler del local comercial, mantenimiento de plaza o edificio, seguridad privada. |
+| **Transporte y Combustible** | Naranja | Gasolina o diésel de furgonetas de delivery, mantenimiento de motores de reparto. |
+| **Gastos Menores y Cafetería** | Gris | Café, agua embotellada para clientes, productos de limpieza para piso y baños. |
+
+---
+
+## 3. Gastos Frecuentes con Plantillas
+
+Para gastos que se repiten con frecuencia (como la compra semanal de botellones de agua o el pago quincenal de limpieza):
+- Klynn cuenta con un sistema de **Plantillas de Gastos Rápidos**.
+- Configura una plantilla con el monto, la categoría y el proveedor habitual.
+- Con un solo clic, el gasto se registra sin tener que volver a escribir la información manualmente.
+
+---
+
+## 4. Comparativas Mensuales y Exportación para el 606 de la DGII
+
+En la parte superior del módulo de Gastos cuentas con:
+- **Selector de Mes y Año**: Permite consultar el histórico de cualquier periodo contable.
+- **Gráfico Comparativo de Egresos**: Muestra la evolución del gasto mes a mes para detectar sobrecostos o consumos anormales de energía/químicos.
+- **Botón "Exportar a Excel"**: Genera una hoja de cálculo con columnas estructuradas (`Fecha`, `NCF`, `RNC Proveedor`, `Nombre Proveedor`, `Monto Total`, `ITBIS Facturado`, `Categoría`, `Método de Pago`). Esta hoja se entrega directamente a tu contador para importar los datos al formulario 606 de la DGII.

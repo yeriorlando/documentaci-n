@@ -1,0 +1,108 @@
+---
+title: "Catálogo de Prendas y Servicios"
+description: "Guía exhaustiva para configurar prendas, servicios de lavado, tintorería, tarifas por libra o pieza, complementos e importación masiva en Klynn."
+icon: "shirt"
+---
+
+# Catálogo de Prendas y Servicios
+
+El módulo de **Catálogo** (`/catalogo`) es el corazón operativo y tarifario de tu lavandería en Klynn. Desde este panel defines qué prendas recibe tu negocio, cómo se cobran (por peso en libra o por unidad), qué servicios adicionales se pueden aplicar (planchado, tintorería, almidonado) y qué tarifas aplican según la modalidad.
+
+```
+┌────────────────────────────────────────────────────────┐
+│                   MÓDULO DE CATÁLOGO                   │
+├──────────────────────────┬─────────────────────────────┤
+│      TAB PRENDAS         │        TAB SERVICIOS        │
+│  • Artículos de ropa     │  • Lavado y Secado (Libras) │
+│  • Prendas individuales  │  • Lavado en Seco / Dry C.  │
+│  • Hogar y Blancos       │  • Planchado a Vapor        │
+│  • Balanza vs Por Pieza  │  • Almidonado y Sastrería   │
+│  • Fotos / Emojis        │  • Tiempos de Entrega       │
+└──────────────────────────┴─────────────────────────────┘
+```
+
+---
+
+## 1. Navegación del Módulo
+
+Al entrar a `/catalogo`, encontrarás dos pestañas superiores principales:
+1. **Prendas**: Muestra todas las prendas y piezas individuales registradas en tu catálogo, con su categoría, precio base, indicador de balanza (por libra) y estado activo/inactivo.
+2. **Servicios**: Define los procesos disponibles en tu planta (Lavado y Secado, Lavado en Seco, Planchado, etc.), sus precios por defecto y tiempos de entrega estimados.
+
+En la barra de herramientas superior dispones de:
+- **Buscador en tiempo real**: Filtra prendas por nombre o categoría al escribir.
+- **Exportar a Excel**: Descarga todo el catálogo de prendas o servicios en formato `.xlsx`.
+- **Importar desde Excel**: Permite cargar cientos de prendas y tarifas de forma masiva en segundos mediante una plantilla estándar.
+- **Botón "+ Nueva Prenda" / "+ Nuevo Servicio"**: Abre el modal interactivo de creación.
+
+---
+
+## 2. Creación y Edición de Prendas
+
+Para registrar un nuevo artículo en tu catálogo, haz clic en **"+ Nueva Prenda"**. Se abrirá un modal con dos secciones estructuradas:
+
+### A. Pestaña "Datos y Tarifas"
+
+| Campo | Tipo | Obligatorio | Descripción y Uso Práctico |
+| :--- | :--- | :--- | :--- |
+| **Nombre de la Prenda** | Texto | Sí | Ej: *Camisa de Hombre*, *Pantalón Jean*, *Edredón King*, *Ropa por Libra*, *Vestido de Gala*. |
+| **Categoría** | Selector / Texto | Sí | Agrupa tus artículos para agilizar la búsqueda en mostrador. Ejemplos comunes: `Ropa de Diario`, `Trajes y Formal`, `Blancos y Cama`, `Hogar`, `Calzado`, `Especiales`. |
+| **Descripción** | Área de texto | Opcional | Especificaciones para el personal de planta (ej: *"Prenda delicada, lavar en ciclo suave, no usar cloro"*). |
+| **¿Se cobra por Libra?** | Switch (Sí/No) | No | Si se activa, en la pantalla de Nueva Orden (`/nueva-orden`) el sistema solicitará ingresar el peso en libras y multiplicará automáticamente el peso por la tarifa. Ideal para lavado general de ropa por peso. |
+| **Precio Base (RD$)** | Numérico | Sí | Tarifa por defecto de la prenda (o tarifa por libra si el switch anterior está activado). |
+| **Tarifas por Servicio Específico** | Lista dinámica | Opcional | Permite fijar precios diferenciados según el proceso requerido. Por ejemplo: para una *Camisa*, puedes fijar: Lavado y Planchado = RD$ 120, Solo Planchado = RD$ 80, Lavado en Seco = RD$ 180. |
+| **Permitir Editar Precio en POS** | Switch | No | Actívalo si el personal de recepción necesita ajustar la tarifa directamente en mostrador ante prendas con manchas difíciles, bordados o trabajos artesanales. |
+| **Permitir Desglose de Piezas** | Switch | No | Permite desglosar un conjunto en partes independientes (ej: en un *Traje 2 Piezas*, desglosa Saco y Pantalón para control interno de marbetes). |
+| **Prenda Exenta de ITBIS** | Switch | No | Márcalo si la prenda no devenga impuesto sobre ventas de acuerdo con la legislación tributaria aplicable. |
+| **Prenda Activa** | Switch | Sí | Al desmarcarlo, la prenda se oculta inmediatamente del punto de venta sin borrar su historial contable. |
+
+### B. Pestaña "Icono o Imagen"
+
+Personaliza cómo se visualiza la prenda en las tarjetas del punto de venta táctil:
+- **Modo Emoji**: Elige entre más de 35 iconos predefinidos de lavandería (👕 Camisa, 👔 Corbata, 👖 Pantalón, 👗 Vestido, 🧥 Chaqueta, 🛏️ Sábana, 🛌 Edredón, ⚖️ Libra, etc.).
+- **Modo Imagen Real**: Sube una fotografía de tu prenda. El sistema aplica **compresión inteligente automática** para que el punto de venta cargue al instante incluso en conexiones lentas.
+
+---
+
+## 3. Configuración de Servicios
+
+En la pestaña **Servicios**, gestionas los procesos que ofrece tu lavandería:
+
+1. Haz clic en **"+ Nuevo Servicio"**.
+2. Completa los campos:
+   - **Nombre del Servicio**: Ej: *Lavado y Secado*, *Planchado a Vapor*, *Lavado en Seco (Dry Cleaning)*, *Almidonado*, *Desmanchado Profundo*, *Sastrería y Costura*.
+   - **Precio Base**: Tarifa que se aplicará por defecto si la prenda no tiene un precio particular asignado.
+   - **Tiempo Estimado de Entrega**: Define el estándar de entrega en horas o días (ej: *24 horas*, *48 horas*). Esto alimenta la fecha estimada de entrega automática en los tickets del cliente.
+   - **Requiere Marbete Físico**: Al activarlo, el sistema exigirá asignar un código de marbete hidro-resistente antes de pasar la prenda a producción.
+3. Guarda los cambios haciendo clic en **"Guardar Servicio"**.
+
+---
+
+## 4. Diferencia entre "Ropa al Peso" y "Prendas Individuales"
+
+Klynn permite operar ambos modelos de negocio de manera simultánea en el mismo ticket:
+
+| Característica | Ropa al Peso (Por Libra) | Prendas por Pieza (Tintorería / Plancha) |
+| :--- | :--- | :--- |
+| **Medición** | Balanza / Báscula en libras (lbs). | Unidades exactas contadas una a una. |
+| **Configuración** | Switch `¿Se cobra por libra?` = **ACTIVADO**. | Switch `¿Se cobra por libra?` = **DESACTIVADO**. |
+| **Casos Típicos** | Canastas de ropa familiar, toallas, sábanas de uso diario. | Trajes, vestidos de noche, edredones king, camisas ejecutivas, sacos. |
+| **Cálculo en POS** | `Peso (lbs) × Precio por Libra`. | `Cantidad de Piezas × Precio Unitario del Servicio`. |
+| **Etiquetado** | 1 marbete por bulto/funda o marbetes por lote. | 1 marbete individual grapado a cada pieza. |
+
+---
+
+## 5. Importación y Exportación Masiva en Excel
+
+Si ya cuentas con un catálogo en hojas de cálculo o vienes de otro software:
+
+1. Haz clic en el botón **"Importar Excel"** en la esquina superior.
+2. Descarga la **Plantilla Oficial de Klynn** en formato `.xlsx`.
+3. Completa las columnas:
+   - `nombre`: Nombre del artículo (ej: Saco de Caballero).
+   - `categoria`: Nombre de la categoría (ej: Formal).
+   - `precio`: Precio base numérico (ej: 250).
+   - `por_libra`: `SI` o `NO`.
+   - `servicios`: Tarifas separadas por comas (ej: `Lavado=200, Planchado=100`).
+4. Arrastra el archivo completado al modal de importación.
+5. El validador verificará que no existan duplicados y creará todas las prendas en bloque.
