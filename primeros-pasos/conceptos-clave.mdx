@@ -1,0 +1,58 @@
+---
+title: "Conceptos Clave"
+description: "Familiarízate con los términos, entidades y flujos principales de Klynn."
+icon: "lightbulb"
+---
+
+Para aprovechar al máximo las capacidades de **Klynn**, es importante comprender cómo se estructuran las entidades dentro del sistema.
+
+## Entidades Principales
+
+<AccordionGroup>
+  <Accordion title="1. Órdenes (Tickets de Servicio)" icon="receipt">
+    Una **orden** es el registro comercial y operativo de un servicio solicitado por un cliente. Contiene:
+    * El detalle de prendas o peso total recibido.
+    * El tipo de servicio seleccionado (lavado por peso, piezas de tintorería, planchado).
+    * El importe total, adelantos recibidos y saldo pendiente.
+    * La fecha estimada de entrega y el operador responsable.
+  </Accordion>
+
+  <Accordion title="2. Clientes y Frecuencia" icon="users">
+    Cada orden se asocia a un perfil de cliente identificado por su número de teléfono o documento.
+    * Historial completo de pedidos y visitas.
+    * Preferencias especiales de lavado (ej: suavizante hipoalergénico, doblado especial).
+    * Balance de cuenta corriente para clientes corporativos (hoteles, restaurantes, gimnasios).
+  </Accordion>
+
+  <Accordion title="3. Servicios y Tarifas" icon="tag">
+    Klynn clasifica los servicios en tres modalidades operativas:
+    * **Por Peso (Kilo / Libra):** Se calcula multiplicando el peso verificado en báscula por la tarifa configurada.
+    * **Por Pieza / Prenda:** Tarifas unitarias para artículos con tratamiento individual (trajes, sábanas, vestidos, cortinas).
+    * **Servicios Especiales:** Recargos por express, desmanche químico o almidonado.
+  </Accordion>
+
+  <Accordion title="4. Cajas y Turnos" icon="cash-register">
+    El módulo de caja registra todos los movimientos financieros en efectivo, transferencias bancarias o tarjeta:
+    * **Apertura de turno:** Con fondo base de cambio.
+    * **Cobros parciales o totales:** En la recepción o en la entrega.
+    * **Cierre de turno:** Cuadre ciego o asistido con arqueo de valores.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Ciclo de vida de una orden
+
+En Klynn, cada orden avanza de forma secuencial a través de distintos estados para garantizar que nada se pierda ni se entregue a destiempo:
+
+| Estado | Descripción | Responsable habitual |
+| :--- | :--- | :--- |
+| **Recibido** | La ropa entra a recepción, se pesa/cuenta y se genera el ticket. | Recepcionista / Cajero |
+| **En Proceso** | La carga está en lavadora o secadora. | Operador de Planta |
+| **En Planchado / Doblado** | Se finaliza el acabado y empaque por bolsa o percha. | Operador de Acabado |
+| **Listo para Entrega** | Ubicado en estantería/perchero con código de ubicación asignado. | Planta / Recepción |
+| **Entregado** | El cliente retira sus prendas y liquida el saldo pendiente. | Recepcionista / Delivery |
+
+<Tip>
+  Cuando una orden pasa al estado **"Listo para Entrega"**, Klynn puede enviar automáticamente un mensaje por **WhatsApp** al cliente con el enlace a su ticket digital.
+</Tip>

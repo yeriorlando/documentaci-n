@@ -1,0 +1,41 @@
+---
+title: "Estados y Seguimiento"
+description: "Gestión de los estados del pedido en planta y trazabilidad en tiempo real."
+icon: "arrows-spin"
+---
+
+El módulo de planta y seguimiento de Klynn permite a los operarios saber con exactitud en qué punto del proceso se encuentra cada orden y evitar retrasos en las fechas prometidas.
+
+## Tablero Kanban de Planta
+
+Klynn cuenta con una vista de tablero visual dividida en columnas:
+
+1. **Por Lavar:** Órdenes recepcionadas listas para ingresar al ciclo de lavado.
+2. **En Lavado / Secado:** Lotes que se encuentran activamente dentro de la maquinaria.
+3. **Planchado y Acabado:** Prendas secas que requieren proceso de vapor, prensado o doblado.
+4. **Listo para Entrega:** Órdenes empacadas y ubicadas en el estante de entrega.
+
+<Tip>
+  Puedes mover las tarjetas arrastrándolas de una columna a otra o escaneando el código de barras/QR del ticket con un lector USB o la cámara de una tableta.
+</Tip>
+
+---
+
+## Ubicación en Estantería (Rack / Casillero)
+
+Cuando una orden se marca como **Listo**, Klynn solicita asignar un código de ubicación física:
+
+* **Perchero / Riel:** Ej. `A-12`, `B-05` (ideal para trajes y vestidos en percha).
+* **Casillero / Anaquel:** Ej. `C-01`, `C-02` (ideal para bultos de ropa doblada).
+
+Al momento en que el cliente viene a retirar, el recepcionista solo introduce el número de orden y la pantalla indicará inmediatamente en qué estante o perchero buscar la ropa, ahorrando tiempo valioso.
+
+---
+
+## Notificaciones Automáticas al Cliente
+
+Klynn puede notificar al cliente en momentos clave:
+
+* **Al recibir la orden:** Confirmación de recepción con el detalle del servicio y el importe.
+* **Al estar listo para retirar:** Mensaje invitando al cliente a pasar a retirar su ropa por sucursal.
+* **Recordatorios periódicos:** Mensajes automáticos si una orden lista lleva más de 3 días sin ser recogida.

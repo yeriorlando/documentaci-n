@@ -4,8 +4,8 @@
   "name": "Klynn",
   "colors": {
     "primary": "#1B4B73",
-    "light": "#1B4B73",
-    "dark": "#F0B900"
+    "light": "#2E75B6",
+    "dark": "#0F2B42"
   },
   "navigation": {
     "tabs": [
@@ -13,115 +13,34 @@
         "tab": "Documentación",
         "groups": [
           {
-            "group": "Primeros Pasos",
+            "group": "Primeros pasos",
             "pages": [
               "index",
-              "primeros-pasos/registro-invitacion",
-              "primeros-pasos/configuracion-inicial",
-              "primeros-pasos/usuarios-y-roles"
+              "primeros-pasos/inicio-rapido",
+              "primeros-pasos/conceptos-clave"
             ]
           },
           {
-            "group": "Panel de Propietarios",
+            "group": "Operaciones y Pedidos",
             "pages": [
-              "dashboard-admin/panel-propietario"
+              "operaciones/crear-orden",
+              "operaciones/estados-y-seguimiento",
+              "operaciones/entregas-y-cobros"
             ]
           },
           {
-            "group": "Catálogo y Servicios",
+            "group": "Gestión del Negocio",
             "pages": [
-              "catalogo/servicios-y-precios"
+              "gestion/clientes",
+              "gestion/catalogo-servicios",
+              "gestion/control-caja"
             ]
           },
           {
-            "group": "Caja y Turnos",
+            "group": "Configuración",
             "pages": [
-              "caja-y-turnos/apertura-caja",
-              "caja-y-turnos/movimientos-efectivo",
-              "caja-y-turnos/cierre-y-arqueo"
-            ]
-          },
-          {
-            "group": "Clientes",
-            "pages": [
-              "clientes/crear-cliente",
-              "clientes/editar-y-gestionar"
-            ]
-          },
-          {
-            "group": "Punto de Venta y Órdenes",
-            "pages": [
-              "ordenes-y-pos/crear-orden",
-              "ordenes-y-pos/cobro-y-tickets",
-              "ordenes-y-pos/seguimiento-y-estados"
-            ]
-          },
-          {
-            "group": "Operaciones y Planta",
-            "pages": [
-              "operaciones-avanzadas/procesos-y-planta",
-              "operaciones-avanzadas/control-marbetes",
-              "operaciones-avanzadas/promociones",
-              "operaciones-avanzadas/conversaciones"
-            ]
-          },
-          {
-            "group": "Estantería y Entregas",
-            "pages": [
-              "estanteria/organizacion-fisica",
-              "estanteria/ubicacion-y-entrega"
-            ]
-          },
-          {
-            "group": "Logística y Delivery",
-            "pages": [
-              "logistica-delivery/rutas-y-entregas"
-            ]
-          },
-          {
-            "group": "Personal y Permisos",
-            "pages": [
-              "personal/gestion-colaboradores"
-            ]
-          },
-          {
-            "group": "Gastos y Egresos",
-            "pages": [
-              "gastos/registro-gastos"
-            ]
-          },
-          {
-            "group": "Crédito y Finanzas",
-            "pages": [
-              "credito-y-finanzas/cxc-cuentas-por-cobrar",
-              "credito-y-finanzas/cxp-cuentas-por-pagar"
-            ]
-          },
-          {
-            "group": "Nómina y Destajo",
-            "pages": [
-              "nomina/gestion-periodos",
-              "nomina/calculo-y-destajo",
-              "nomina/pago-y-volantes"
-            ]
-          },
-          {
-            "group": "Reportes y Analíticas",
-            "pages": [
-              "reportes/analiticas-y-reportes"
-            ]
-          },
-          {
-            "group": "Facturación Fiscal (DGII)",
-            "pages": [
-              "fiscal-dgii/comprobantes-ncf",
-              "fiscal-dgii/facturacion-electronica-ecf"
-            ]
-          },
-          {
-            "group": "Configuración y Hardware",
-            "pages": [
-              "configuracion/ajustes-del-sistema"
+              "configuracion/usuarios-y-roles",
+              "configuracion/tickets-e-impresoras"
             ]
           }
         ]

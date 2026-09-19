@@ -1,0 +1,45 @@
+---
+title: "Entregas y Cobros"
+description: "Flujo de entrega de pedidos, liquidación de saldos y emisión de comprobantes."
+icon: "money-bill-transfer"
+---
+
+La entrega de pedidos en el mostrador es la última interacción operativa con el cliente. Klynn asegura que ninguna orden salga sin ser cobrada ni debidamente registrada.
+
+## Proceso de Entrega en Mostrador
+
+<Steps>
+  <Step title="Búsqueda de la Orden">
+    Busca la orden mediante:
+    * Escaneo del código QR o de barras del ticket del cliente.
+    * Búsqueda por número de orden.
+    * Búsqueda por nombre o teléfono del cliente.
+  </Step>
+
+  <Step title="Localización de las Prendas">
+    El sistema mostrará en pantalla la ubicación física exacta asignada a las prendas (ejemplo: *Estante B-04* o *Perchero 12*).
+  </Step>
+
+  <Step title="Liquidación del Saldo Pendiente">
+    Si la orden tenía saldo por pagar, la pantalla mostrará el monto exacto:
+    1. Selecciona el método de pago (Efectivo, Tarjeta de Débito/Crédito, Transferencia Bancaria).
+    2. Si el pago es en efectivo, ingresa el monto recibido para calcular el cambio automáticamente.
+  </Step>
+
+  <Step title="Confirmación y Entrega">
+    Haz clic en **"Entregar Orden"**. El estado pasará a **Entregado**, se actualizará la caja en tiempo real y se liberará la casilla de ubicación física para futuras órdenes.
+  </Step>
+</Steps>
+
+## Métodos de Pago Soportados
+
+Klynn permite registrar múltiples formas de pago en una sola transacción (pagos combinados):
+
+* **Efectivo:** Con cálculo inmediato de cambio.
+* **Tarjetas:** Débito y Crédito (Visa, Mastercard, etc.).
+* **Transferencias / Pagos Móviles:** Registro de número de referencia de la transferencia.
+* **Crédito Corporativo:** Cargo a cuenta mensual para empresas afiliadas.
+
+<Note>
+  Todas las transacciones de cobro quedan vinculadas al usuario activo en el turno de caja correspondiente, garantizando una auditoría transparente.
+</Note>
